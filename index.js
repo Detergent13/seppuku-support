@@ -20,11 +20,10 @@ function main() {
 		console.log(`Logged in as ${client.user.tag}!`);
 	})
 
-	client.on('ready', () => {
-		client.user.setActivity('$support', { type: 'WATCHING'})
-			.then(console.log)
-			.catch(console.error)
-	})
+	//status
+	client.user.setActivity('$support', { type: 'WATCHING'})
+		.then(console.log)
+		.catch(console.error)
 
 	//ping
 	client.on('message', msg => {
