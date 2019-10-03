@@ -21,9 +21,7 @@ function main() {
 		})
 
 	client.on('ready', () => {
-		client.user.setActivity('discord.js', { type: 'PLAYING' })
-			.then(presence => console.log(`Activity set to ${presence.game.name}`))
-			.catch(console.error);
+		client.user.setActivity("$support", { type: "WATCHING"})
 	})
 
 
@@ -135,7 +133,7 @@ function main() {
 				.setTitle('Seppuku Website')
 				.setURL('http://seppuku.pw')
 				.setTimestamp()
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation')
+				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix')
 				.setFooter('Made by ' + tag, url);
 			installEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
