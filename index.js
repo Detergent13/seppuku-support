@@ -59,6 +59,11 @@ function main() {
 			msg.reply(installEmbed)
 	})
 
+	client.on('message', msg => {
+		if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034')
+			msg.reply(multimcEmbed)
+	})
+
 	//bind keyword
 	client.on('message', msg => {
 		if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034')
@@ -101,6 +106,7 @@ function main() {
 	let installEmbed = null;
 	let prefixEmbed = null;
 	let bindEmbed = null;
+	let multimcEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -150,6 +156,13 @@ function main() {
 				.setColor('#9900EE')
 				.setTimestamp()
 				.addField('How to change Seppuku\'s prefix:','.prefix key')
+				.setFooter('Made by ' + tag, url);
+			multimcEmbed = new Discord.RichEmbed()
+				.setTitle('MultiMC Instance')
+				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/629141526718447657')
+				.setColor('#9900EE')
+				.setTimestamp()
+				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
 				.setFooter('Made by ' + tag, url);
 		})
 
