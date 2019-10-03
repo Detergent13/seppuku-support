@@ -21,7 +21,7 @@ function main() {
 	})
 
 	//status
-	client.user.setActivity('$support', { type: 'WATCHING'})
+	client.user.setActivity('$support', { type: 'PLAYING'})
 		.then(console.log)
 		.catch(console.error)
 
