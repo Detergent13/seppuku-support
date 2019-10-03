@@ -16,22 +16,22 @@ function main() {
 	const myid = '456352346880999424';
 
 	//setup - console output and activity set
-		client.on('ready', () => {
-			console.log(`Logged in as ${client.user.tag}!`);
-		})
-
 	client.on('ready', () => {
-		client.user.setActivity("$support", { type: "WATCHING"})
+		console.log(`Logged in as ${client.user.tag}!`);
 	})
 
-
+	client.on('ready', () => {
+		client.user.setActivity('$support', { type: 'WATCHING'})
+			.then(console.log)
+			.catch(console.error)
+	})
 
 	//ping
-		client.on('message', msg => {
-			if (msg.content.toLowerCase() === 'ping')
-				msg.reply('bruh')
+	client.on('message', msg => {
+		if (msg.content.toLowerCase() === 'ping')
+			msg.reply('bruh')
 
-		})
+	})
 
 	//support
 	client.on('message', msg => {
