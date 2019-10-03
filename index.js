@@ -22,7 +22,7 @@ function main() {
 			client.user.setPresence({
 				game: {
 					name: '$support',
-					type: "PLAYING",
+					type: "PLAYING"
 				}
 			})
 		})
