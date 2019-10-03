@@ -27,78 +27,64 @@ function main() {
 
 	//ping
 	client.on('message', msg => {
-		if (msg.content.toLowerCase() === 'ping')
+		let count = 0;
+
+		if (msg.content.toLowerCase() === 'ping' && count < 2) {
 			msg.reply('bruh')
-
-	})
-
-	//support
-	client.on('message', msg => {
-		if (msg.content.toLowerCase() === '$support')
-			msg.reply(supportEmbed)
-
-	})
-
-	//baritone keyword
-		client.on('message', msg => {
-			if (msg.content.match(/baritone/gi) != null && msg.author.id != '612144500743340034')
-				msg.reply(baritoneEmbed)
-
-		})
-
-	//clickgui keyword
-	client.on('message', msg => {
-		if (msg.content.match(/gui/gi) != null && msg.author.id != '612144500743340034')
-			msg.reply(clickguiEmbed)
-
-	})
-
-	//install keyword
-	client.on('message', msg => {
-		if (msg.content.match(/install/gi) != null && msg.author.id !== '612144500743340034')
-			msg.reply(installEmbed)
-	})
-
-	client.on('message', msg => {
-		if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034')
-			msg.reply(multimcEmbed)
-	})
-
-	//bind keyword
-	client.on('message', msg => {
-		if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034')
-			msg.reply(bindEmbed)
-	})
-
-	//prefix keyword
-	client.on('message', msg => {
-		if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034')
-			msg.reply(prefixEmbed)
-	})
-
-	//stop
-	client.on('message', msg => {
-		if (msg.content === '$stop') {
-			if (msg.author.id !== myid) return;
-			msg.channel.send('Stopped.').then(() => {
-				process.exit(1);
-			})
+			count++;
 		}
-	})
 
-	//test
-	client.on('message', msg => {
+		if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id != '612144500743340034')&& count < 2) {
+			msg.channel.send('stfu')
+			count++;
+		}
+
+		if (msg.content.toLowerCase() === '$support' && count < 2) {
+			msg.reply(supportEmbed)
+			count++;
+		}
+
+		if (msg.content.match(/baritone/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			msg.reply(baritoneEmbed)
+			count++;
+		}
+
+		if (msg.content === '$stop' && msg.author.id === myid) {
+			msg.channel.send('Stopped.');
+			process.exit(1);
+			}
+
+
+		if (msg.content.match(/gui/gi) != null && msg.author.id != '612144500743340034' && count < 2) {
+			msg.reply(clickguiEmbed);
+			count++
+		}
+
+		if (msg.content.match(/install/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			msg.reply(installEmbed)
+			count++
+		}
+
+		if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			msg.reply(multimcEmbed)
+			count++
+		}
+
+		if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034' && count < 2){
+			msg.reply(bindEmbed)
+			count++
+		}
+
+		if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			msg.reply(prefixEmbed)
+			count++
+		}
+
 		if (msg.author.id === myid && msg.content.toLowerCase() === "test") {
 			console.log(`test`);
 			msg.reply('test')
 		}
 	})
-
-	client.on('message', msg => {
-		if (((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id != '612144500743340034')
-			msg.channel.send('stfu')
-	})
-
 
 	let supportEmbed = null;
 	let baritoneEmbed = null;
@@ -138,7 +124,7 @@ function main() {
 				.setTitle('Seppuku Website')
 				.setURL('http://seppuku.pw')
 				.setTimestamp()
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix')
+				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC')
 				.setFooter('Made by ' + tag, url);
 			installEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
