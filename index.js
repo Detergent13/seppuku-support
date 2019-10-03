@@ -18,7 +18,7 @@ function main() {
 	//setup - console output and activity set
 		client.on('ready', () => {
 			console.log(`Logged in as ${client.user.tag}!`);
-			client.user.setActivity("$support", {type: "PLAYING"})
+			client.user.setActivity('$support')
 		})
 
 	//ping
@@ -55,6 +55,18 @@ function main() {
 			msg.reply(installEmbed)
 	})
 
+	//bind keyword
+	client.on('message', msg => {
+		if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034')
+			msg.reply(bindEmbed)
+	})
+
+	//prefix keyword
+	client.on('message', msg => {
+		if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034')
+			msg.reply(prefixEmbed)
+	})
+
 	//stop
 	client.on('message', msg => {
 		if (msg.content === '$stop') {
@@ -75,7 +87,7 @@ function main() {
 
 	client.on('message', msg => {
 		if (((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id != '612144500743340034')
-			msg.channel.send('/ban')
+			msg.channel.send('stfu')
 	})
 
 
@@ -83,6 +95,9 @@ function main() {
 	let baritoneEmbed = null;
 	let clickguiEmbed = null;
 	let installEmbed = null;
+	let prefixEmbed = null;
+	let bindEmbed = null;
+
 	let url = null;
 	let tag = null;
 
@@ -121,6 +136,16 @@ function main() {
 				.setURL('http://seppuku.pw/download.html')
 				.setTimestamp()
 				.addField('How to install Seppuku:','Seppuku is a forge mod, so install forge (v14.23.5.2768 recommended), run the profile at least once, then place the Seppuku jar in *%appdata%\\\\.minecraft\\\\mods*\n**Seppuku\'s default prefix is `.`**')
+				.setFooter('Made by ' + tag, url);
+			bindEmbed = new Discord.RichEmbed()
+				.setColor('#9900EE')
+				.setTimestamp()
+				.addField('How to bind modules:','.bind moduleName key')
+				.setFooter('Made by ' + tag, url);
+			prefixEmbed = new Discord.RichEmbed()
+				.setColor('#9900EE')
+				.setTimestamp()
+				.addField('How to change Seppuku\'s prefix:','.prefix key')
 				.setFooter('Made by ' + tag, url);
 		})
 
