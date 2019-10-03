@@ -18,10 +18,15 @@ function main() {
 	//setup - console output and activity set
 		client.on('ready', () => {
 			console.log(`Logged in as ${client.user.tag}!`);
-			client.user.setPresence({ activity: { name: '$support' }, status: 'online' })
-				.then(console.log)
-				.catch(console.error);
 		})
+
+	client.on('ready', () => {
+		client.user.setActivity('discord.js', { type: 'PLAYING' })
+			.then(presence => console.log(`Activity set to ${presence.activity.name}`))
+			.catch(console.error);
+	})
+
+
 
 	//ping
 		client.on('message', msg => {
