@@ -18,7 +18,13 @@ function main() {
 	//setup - console output and activity set
 		client.on('ready', () => {
 			console.log(`Logged in as ${client.user.tag}!`);
-			client.user.setActivity('$support')
+			client.user.setStatus('online')
+			client.user.setPresence({
+				game: {
+					name: '$support',
+					type: "PLAYING",
+				}
+			})
 		})
 
 	//ping
