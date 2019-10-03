@@ -22,7 +22,7 @@ function main() {
 
 	client.on('ready', () => {
 		client.user.setActivity('discord.js', { type: 'PLAYING' })
-			.then(presence => console.log(`Activity set to ${presence.activity.name}`))
+			.then(presence => console.log(`Activity set to ${presence.game.name}`))
 			.catch(console.error);
 	})
 
