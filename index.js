@@ -34,7 +34,7 @@ function main() {
 			count++;
 		}
 
-		if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id != '612144500743340034')&& count < 2) {
+		if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id !== '612144500743340034')&& count < 2) {
 			msg.channel.send('stfu')
 			count++;
 		}
@@ -55,7 +55,7 @@ function main() {
 			}
 
 
-		if (msg.content.match(/gui/gi) != null && msg.author.id != '612144500743340034' && count < 2) {
+		if (msg.content.match(/gui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
 			msg.reply(clickguiEmbed);
 			count++
 		}
@@ -79,6 +79,11 @@ function main() {
 			msg.reply(prefixEmbed)
 			count++
 		}
+//new
+		if (msg.content.match(/future/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			msg.reply(futureEmbed)
+			count++
+		}
 
 		if (msg.author.id === myid && msg.content.toLowerCase() === "test") {
 			console.log(`test`);
@@ -93,6 +98,7 @@ function main() {
 	let prefixEmbed = null;
 	let bindEmbed = null;
 	let multimcEmbed = null;
+	let futureEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -110,44 +116,41 @@ function main() {
 				.setTitle('Baritone Releases')
 				.setURL('https://github.com/cabaletta/baritone/releases')
 				.setDescription('Download baritone-standalone-forge-1.2.x, and install as a forge mod.')
-				.setTimestamp()
 				.setFooter('Made by ' + tag, url);
 			clickguiEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
 				.setTitle('ClickGUI Release')
 				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/598109907555844097')
 				.setDescription('Download the ClickGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. ')
-				.setTimestamp()
 				.setFooter('Made by ' + tag, url);
 			supportEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
 				.setTitle('Seppuku Website')
 				.setURL('http://seppuku.pw')
-				.setTimestamp()
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC')
+				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture + Seppuku')
 				.setFooter('Made by ' + tag, url);
 			installEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
 				.setTitle('Download Seppuku')
 				.setURL('http://seppuku.pw/download.html')
-				.setTimestamp()
 				.addField('How to install Seppuku:','Seppuku is a forge mod, so install forge (v14.23.5.2768 recommended), run the profile at least once, then place the Seppuku jar in *%appdata%\\\\.minecraft\\\\mods*\n**Seppuku\'s default prefix is `.`**')
 				.setFooter('Made by ' + tag, url);
 			bindEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
-				.setTimestamp()
 				.addField('How to bind modules:','.bind moduleName key')
 				.setFooter('Made by ' + tag, url);
 			prefixEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
-				.setTimestamp()
-				.addField('How to change Seppuku\'s prefix:','.prefix key')
+				.addField('How to change Seppuku\'s prefix:','.cmd prefix key')
+				.setFooter('Made by ' + tag, url);
+			futureEmbed = new Discord.RichEmbed()
+				.setColor('#9900EE')
+				.addField('How to use Future with Seppuku:','Install Future on top of Forge, then install Seppuku normally.')
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
 				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/629141526718447657')
 				.setColor('#9900EE')
-				.setTimestamp()
 				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
 				.setFooter('Made by ' + tag, url);
 		})
