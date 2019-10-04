@@ -79,7 +79,7 @@ function main() {
 			msg.reply(prefixEmbed)
 			count++
 		}
-//new
+
 		if (msg.content.match(/future/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
 			msg.reply(futureEmbed)
 			count++
@@ -88,6 +88,11 @@ function main() {
 		if (msg.author.id === myid && msg.content.toLowerCase() === "test") {
 			console.log(`test`);
 			msg.reply('test')
+		}
+
+		if(msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && count < 2){
+			msg.channel.send(clippyEmbed);
+			count++
 		}
 	})
 
@@ -99,6 +104,7 @@ function main() {
 	let bindEmbed = null;
 	let multimcEmbed = null;
 	let futureEmbed = null;
+	let clippyEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -127,7 +133,7 @@ function main() {
 				.setColor('#9900EE')
 				.setTitle('Seppuku Website')
 				.setURL('http://seppuku.pw')
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture + Seppuku')
+				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture + Seppuku\nClippy')
 				.setFooter('Made by ' + tag, url);
 			installEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
@@ -152,6 +158,9 @@ function main() {
 				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/629141526718447657')
 				.setColor('#9900EE')
 				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
+				.setFooter('Made by ' + tag, url);
+			clippyEmbed = new Discord.RichEmbed()
+				.setThumbnail('https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg')
 				.setFooter('Made by ' + tag, url);
 		})
 
