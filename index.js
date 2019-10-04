@@ -91,7 +91,7 @@ function main() {
 		}
 
 		if(msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && count < 2){
-			msg.channel.send(clippyEmbed);
+			msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
 			count++
 		}
 	})
@@ -158,9 +158,6 @@ function main() {
 				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/629141526718447657')
 				.setColor('#9900EE')
 				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
-				.setFooter('Made by ' + tag, url);
-			clippyEmbed = new Discord.RichEmbed()
-				.setThumbnail('https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg')
 				.setFooter('Made by ' + tag, url);
 		})
 
