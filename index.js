@@ -145,7 +145,7 @@ function main() {
 				.setFooter('Made by ' + tag, url);
 			futureEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
-				.addField('How to use Future with Seppuku:','Install Future on top of Forge, then install Seppuku normally.')
+				.addField('How to use Future with Seppuku:','Install Future on your Forge version, then install Seppuku normally.')
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
