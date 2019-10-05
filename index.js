@@ -29,70 +29,73 @@ function main() {
 	client.on('message', msg => {
 		let count = 0;
 
-		if (msg.content.toLowerCase() === 'ping' && count < 2) {
-			msg.reply('bruh')
-			count++;
-		}
+		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484') {
 
-		if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id !== '612144500743340034')&& count < 2) {
-			msg.channel.send('stfu')
-			count++;
-		}
+			if (msg.content.toLowerCase() === 'ping' && count < 2) {
+				msg.reply('bruh')
+				count++;
+			}
 
-		if (msg.content.toLowerCase() === '$support' && count < 2) {
-			msg.reply(supportEmbed)
-			count++;
-		}
+			if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id !== '612144500743340034') && count < 2) {
+				msg.channel.send('stfu')
+				count++;
+			}
 
-		if (msg.content.match(/baritone/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(baritoneEmbed)
-			count++;
-		}
+			if (msg.content.toLowerCase() === '$support' && count < 2) {
+				msg.reply(supportEmbed)
+				count++;
+			}
 
-		if (msg.content === '$stop' && msg.author.id === myid) {
-			msg.channel.send('Stopped.');
-			process.exit(1);
+			if (msg.content.match(/baritone/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(baritoneEmbed)
+				count++;
+			}
+
+			if (msg.content === '$stop' && msg.author.id === myid) {
+				msg.channel.send('Stopped.');
+				process.exit(1);
 			}
 
 
-		if (msg.content.match(/gui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(clickguiEmbed);
-			count++
-		}
+			if (msg.content.match(/clickgui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(clickguiEmbed);
+				count++
+			}
 
-		if (msg.content.match(/install/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(installEmbed)
-			count++
-		}
+			if (msg.content.match(/install/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(installEmbed)
+				count++
+			}
 
-		if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(multimcEmbed)
-			count++
-		}
+			if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(multimcEmbed)
+				count++
+			}
 
-		if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034' && count < 2){
-			msg.reply(bindEmbed)
-			count++
-		}
+			if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(bindEmbed)
+				count++
+			}
 
-		if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(prefixEmbed)
-			count++
-		}
+			if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(prefixEmbed)
+				count++
+			}
 
-		if (msg.content.match(/future/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
-			msg.reply(futureEmbed)
-			count++
-		}
+			if (msg.content.match(/future/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(futureEmbed)
+				count++
+			}
 
-		if (msg.author.id === myid && msg.content.toLowerCase() === "test") {
-			console.log(`test`);
-			msg.reply('test')
-		}
+			if (msg.author.id === myid && msg.content.toLowerCase() === "test") {
+				console.log(`test`);
+				msg.reply('test')
+			}
 
-		if(msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && count < 2){
-			msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
-			count++
+			if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
+				count++
+			}
 		}
 	})
 
@@ -104,7 +107,6 @@ function main() {
 	let bindEmbed = null;
 	let multimcEmbed = null;
 	let futureEmbed = null;
-	let clippyEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -151,7 +153,7 @@ function main() {
 				.setFooter('Made by ' + tag, url);
 			futureEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
-				.addField('How to use Future with Seppuku:','Install Future on your Forge version, then install Seppuku normally.')
+				.addField('How to use Future with Seppuku:','**Not recommended or officially supported**\nInstall Future on your Forge version, then install Seppuku normally.')
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
