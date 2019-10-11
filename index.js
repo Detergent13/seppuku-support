@@ -67,7 +67,7 @@ function main() {
 				count++
 			}
 
-			if (msg.content.match(msg.content.toLowerCase() === "install" && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(msg.content.toLowerCase() === "install" && msg.author.id !== '612144500743340034' && count < 2)) {
 				msg.reply(installEmbed)
 				count++
 			}
