@@ -62,7 +62,12 @@ function main() {
 				count++
 			}
 
-			if (msg.content.match(/install/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/crash/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(crashEmbed);
+				count++
+			}
+
+			if (msg.content.match(msg.content.toLowerCase() === "install" && msg.author.id !== '612144500743340034' && count < 2) {
 				msg.reply(installEmbed)
 				count++
 			}
@@ -82,7 +87,7 @@ function main() {
 				count++
 			}
 
-			if (msg.content.match(/future/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.toLowerCase() === "future" && msg.author.id !== '612144500743340034' && count < 2) {
 				msg.reply(futureEmbed)
 				count++
 			}
@@ -107,6 +112,7 @@ function main() {
 	let bindEmbed = null;
 	let multimcEmbed = null;
 	let futureEmbed = null;
+	let crashEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -135,7 +141,7 @@ function main() {
 				.setColor('#9900EE')
 				.setTitle('Seppuku Website')
 				.setURL('http://seppuku.pw')
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture + Seppuku\nClippy')
+				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture\nClippy\nCrashes')
 				.setFooter('Made by ' + tag, url);
 			installEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
@@ -157,9 +163,13 @@ function main() {
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
-				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/629141526718447657')
+				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/630790417117478919')
 				.setColor('#9900EE')
 				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
+				.setFooter('Made by ' + tag, url);
+			crashEmbed = new Discord.RichEmbed()
+				.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
+				.setColor('#9900EE')
 				.setFooter('Made by ' + tag, url);
 		})
 
