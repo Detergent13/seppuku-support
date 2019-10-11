@@ -62,6 +62,11 @@ function main() {
 				count++
 			}
 
+			if (msg.content.match(/tabgui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+				msg.reply(tabguiEmbed);
+				count++
+			}
+
 			if (msg.content.match(/crash/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
 				msg.reply(crashEmbed);
 				count++
@@ -113,6 +118,7 @@ function main() {
 	let multimcEmbed = null;
 	let futureEmbed = null;
 	let crashEmbed = null;
+	let tabguiEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -135,7 +141,13 @@ function main() {
 				.setColor('#9900EE')
 				.setTitle('ClickGUI Release')
 				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/598109907555844097')
-				.setDescription('Download the ClickGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. ')
+				.setDescription('Download the ClickGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. Then type .bind clickgui keyHere in chat.')
+				.setFooter('Made by ' + tag, url);
+			tabguiEmbed = new Discord.RichEmbed()
+				.setColor('#9900EE')
+				.setTitle('TabGUI Release')
+				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/587486774012411909')
+				.setDescription('Download the TabGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. Then type .bind tabgui keyHere in chat.')
 				.setFooter('Made by ' + tag, url);
 			supportEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
