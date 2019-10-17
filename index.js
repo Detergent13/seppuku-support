@@ -25,18 +25,18 @@ function main() {
 		.then(console.log)
 		.catch(console.error)
 
-	//ping
+	//message listener
 	client.on('message', msg => {
 		let count = 0;
 
-		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484') {
+		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484' && !msg.author.bot) {
 
 			if (msg.content.toLowerCase() === 'ping' && count < 2) {
 				msg.reply('bruh')
 				count++;
 			}
 
-			if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id !== '612144500743340034') && count < 2) {
+			if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && msg.author.id) && count < 2) {
 				msg.channel.send('stfu')
 				count++;
 			}
@@ -46,7 +46,7 @@ function main() {
 				count++;
 			}
 
-			if (msg.content.match(/baritone/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/baritone/gi) != null && msg.author.id && count < 2) {
 				msg.reply(baritoneEmbed)
 				count++;
 			}
@@ -57,42 +57,42 @@ function main() {
 			}
 
 
-			if (msg.content.match(/clickgui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/clickgui/gi) != null && msg.author.id && count < 2) {
 				msg.reply(clickguiEmbed);
 				count++
 			}
 
-			if (msg.content.match(/tabgui/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/tabgui/gi) != null && msg.author.id && count < 2) {
 				msg.reply(tabguiEmbed);
 				count++
 			}
 
-			if (msg.content.match(/crash/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/crash/gi) != null && msg.author.id && count < 2) {
 				msg.reply(crashEmbed);
 				count++
 			}
 
-			if (msg.content.toLowerCase() === "install" || msg.content.toLowerCase() === "installation" && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.toLowerCase() === "install" || msg.content.toLowerCase() === "installation" && msg.author.id && count < 2) {
 				msg.reply(installEmbed)
 				count++
 			}
 
-			if (msg.content.match(/multimc/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/multimc/gi) != null && msg.author.id && count < 2) {
 				msg.reply(multimcEmbed)
 				count++
 			}
 
-			if (msg.content.match(/bind/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/bind/gi) != null && msg.author.id && count < 2) {
 				msg.reply(bindEmbed)
 				count++
 			}
 
-			if (msg.content.match(/prefix/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/prefix/gi) != null && msg.author.id && count < 2) {
 				msg.reply(prefixEmbed)
 				count++
 			}
 
-			if (msg.content.toLowerCase() === "future" && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.toLowerCase() === "future" && msg.author.id && count < 2) {
 				msg.reply(futureEmbed)
 				count++
 			}
@@ -102,7 +102,7 @@ function main() {
 				msg.reply('test')
 			}
 
-			if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && count < 2) {
+			if (msg.content.match(/clippy/gi) != null && msg.author.id && count < 2) {
 				msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
 				count++
 			}
