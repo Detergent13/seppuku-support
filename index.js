@@ -30,7 +30,7 @@ function main() {
 		let count = 0;
 
 
-		if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && msg.channel.id === '616326980438327346') {
+		if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && msg.channel.id === '579551809685815307') {
 			msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
 			count++
 		}
@@ -184,7 +184,7 @@ function main() {
 				.setTitle('MultiMC Instance')
 				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/637120528573923338')
 				.setColor('#9900EE')
-				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine, Shulker Viewer, FakeCreative, RPC\nCredit to <@345932649480847370>!')
+				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine, Shulker Viewer, FakeCreative\nCredit to <@345932649480847370>!')
 				.setFooter('Made by ' + tag, url);
 			crashEmbed = new Discord.RichEmbed()
 				.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
