@@ -29,6 +29,11 @@ function main() {
 	client.on('message', msg => {
 		let count = 0;
 
+		if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && msg.channel.id === '616326980438327346') {
+			msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
+			count++
+		}
+
 		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484') {
 
 			if (msg.content.toLowerCase() === 'ping' && count < 2) {
@@ -175,9 +180,9 @@ function main() {
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
-				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/630790417117478919')
+				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/637120528573923338')
 				.setColor('#9900EE')
-				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine\nCredit to <@345932649480847370>!')
+				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine, Shulker Viewer, FakeCreative, RPC\nCredit to <@345932649480847370>!')
 				.setFooter('Made by ' + tag, url);
 			crashEmbed = new Discord.RichEmbed()
 				.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
