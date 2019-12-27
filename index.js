@@ -65,12 +65,12 @@ function main() {
 
 
 			if (msg.content.match(/clickgui/gi) != null && msg.author.id && count < 2) {
-				msg.reply(clickguiEmbed);
+				msg.reply(guiEmbed);
 				count++
 			}
 
 			if (msg.content.match(/tabgui/gi) != null && msg.author.id && count < 2) {
-				msg.reply(tabguiEmbed);
+				msg.reply(guiEmbed);
 				count++
 			}
 
@@ -118,14 +118,13 @@ function main() {
 
 	let supportEmbed = null;
 	let baritoneEmbed = null;
-	let clickguiEmbed = null;
+	let guiEmbed = null;
 	let installEmbed = null;
 	let prefixEmbed = null;
 	let bindEmbed = null;
 	let multimcEmbed = null;
 	let futureEmbed = null;
 	let crashEmbed = null;
-	let tabguiEmbed = null;
 
 	let url = null;
 	let tag = null;
@@ -144,17 +143,13 @@ function main() {
 				.setURL('https://github.com/cabaletta/baritone/releases')
 				.setDescription('Download baritone-standalone-forge-1.2.x, and install as a forge mod.')
 				.setFooter('Made by ' + tag, url);
-			clickguiEmbed = new Discord.RichEmbed()
+			guiEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
-				.setTitle('ClickGUI Release')
-				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/598109907555844097')
-				.setDescription('Download the ClickGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. Then type .bind clickgui keyHere in chat.')
-				.setFooter('Made by ' + tag, url);
-			tabguiEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.setTitle('TabGUI Release')
-				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/587486774012411909')
-				.setDescription('Download the TabGUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. Then type .bind tabgui keyHere in chat.')
+				.setTitle('ClickGUI & TabGUI Release')
+				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/659976320951779341')
+				.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
+					'\nYou can bind TabGUI with .bind tabgui <key>, and the ClickGUI is bound to RSHIFT by default.' +
+					'\nCredit to <@376038587252342786>!')
 				.setFooter('Made by ' + tag, url);
 			supportEmbed = new Discord.RichEmbed()
 				.setColor('#9900EE')
