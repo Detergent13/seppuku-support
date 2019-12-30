@@ -177,10 +177,10 @@ function main() {
 				.setFooter('Made by ' + tag, url);
 			multimcEmbed = new Discord.RichEmbed()
 				.setTitle('MultiMC Instance')
-				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/637120528573923338')
+				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/660891430545522717')
 				.setColor('#9900EE')
                                 .addField('Tutorial Here:', 'https://youtu.be/FCsj3oCxi7Q', true)
-				.addField('Includes:','ClickGUI, TabGUI, RPC, FakeCreative, Baritone, Optifine, Shulker Viewer\nCredit to <@345932649480847370>!', true)
+				.addField('Includes:','Latest Build Dec. 29th, BetterFPS mod, Baritone, ClickUI, TabUI, and Smooth Font\nCredit to <@345932649480847370>!', true)
 				.setFooter('Made by ' + tag, url);
 			crashEmbed = new Discord.RichEmbed()
 				.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
