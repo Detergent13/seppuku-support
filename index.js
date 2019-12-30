@@ -147,7 +147,7 @@ function main() {
 				.setColor('#9900EE')
 				.setTitle('ClickGUI & TabGUI Release')
 				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/659976320951779341')
-				.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules.* Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
+				.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules* for 3.0.2-, or *%appdata%\\\\.minecraft\\\\Seppuku\\\\Modules* for 3.0.3+ Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
 					'\nYou can bind TabGUI with .bind tabgui <key>, and the ClickGUI is bound to RSHIFT by default.' +
 					'\nCredit to <@376038587252342786>!')
 				.setFooter('Made by ' + tag, url);
