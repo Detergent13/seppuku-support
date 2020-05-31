@@ -141,64 +141,64 @@ function main() {
 	let url = null;
 	let tag = null;
 
-	client.users.cache.get('456352346880999424')
-		.then(member => {
-			url = member.avatarURL;
-			tag = member.tag;
+	myUser = client.users.cache.get('456352346880999424')
+		
+	url = myUser.getAvatarURL();
+	tag = member.tag;
 
-			console.log(url);
-			console.log(tag);
+	console.log(url);
+	console.log(tag);
 
-			baritoneEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.setTitle('Baritone Releases')
-				.setURL('https://github.com/cabaletta/baritone/releases')
-				.setDescription('Download baritone-standalone-forge-1.2.x, and install as a forge mod.')
-				.setFooter('Made by ' + tag, url);
-			guiEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.setTitle('ClickGUI & TabGUI Release')
-				.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/659976320951779341')
-				.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules* for 3.0.2-, or *%appdata%\\\\.minecraft\\\\Seppuku\\\\Modules* for 3.0.3+ Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
-					'\nYou can bind TabGUI with .bind tabgui <key>, and the ClickGUI is bound to RSHIFT by default.' +
-					'\nCredit to <@376038587252342786>!')
-				.setFooter('Made by ' + tag, url);
-			supportEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.setTitle('Seppuku Website')
-				.setURL('http://seppuku.pw')
-				.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture\nClippy\nCrashes')
-				.setFooter('Made by ' + tag, url);
-			installEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.setTitle('Download Seppuku')
-				.setURL('http://seppuku.pw/download.html')
-				.addField('How to install Seppuku:','Seppuku is a forge mod, so install forge (v14.23.5.2768 recommended), run the profile at least once, then place the Seppuku jar in *%appdata%\\\\.minecraft\\\\mods*\n**Seppuku\'s default prefix is `.`**')
-				.setFooter('Made by ' + tag, url);
-			bindEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.addField('How to bind modules:','.bind moduleName key')
-				.setFooter('Made by ' + tag, url);
-			prefixEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.addField('How to change Seppuku\'s prefix:','.cmd prefix key')
-				.setFooter('Made by ' + tag, url);
-			futureEmbed = new Discord.RichEmbed()
-				.setColor('#9900EE')
-				.addField('How to use Future with Seppuku:','**Not recommended or officially supported**\nInstall Future on your Forge version, then install Seppuku normally.')
-				.setFooter('Made by ' + tag, url);
-			multimcEmbed = new Discord.RichEmbed()
-				.setTitle('MultiMC Instance')
-				.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/660891430545522717')
-				.setColor('#9900EE')
-                                .addField('Tutorial Here:', 'https://youtu.be/FCsj3oCxi7Q', true)
-				.addField('Includes:','Latest Build Dec. 29th, BetterFPS mod, Baritone, ClickUI, TabUI, and Smooth Font\nCredit to <@345932649480847370>!', true)
-				.setFooter('Made by ' + tag, url);
-			crashEmbed = new Discord.RichEmbed()
-				.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
-				.setColor('#9900EE')
-				.setFooter('Made by ' + tag, url);
-		})
+	baritoneEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.setTitle('Baritone Releases')
+		.setURL('https://github.com/cabaletta/baritone/releases')
+		.setDescription('Download baritone-standalone-forge-1.2.x, and install as a forge mod.')
+		.setFooter('Made by ' + tag, url);
+	guiEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.setTitle('ClickGUI & TabGUI Release')
+		.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/659976320951779341')
+		.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules* for 3.0.2-, or *%appdata%\\\\.minecraft\\\\Seppuku\\\\Modules* for 3.0.3+ Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
+			'\nYou can bind TabGUI with .bind tabgui <key>, and the ClickGUI is bound to RSHIFT by default.' +
+			'\nCredit to <@376038587252342786>!')
+		.setFooter('Made by ' + tag, url);
+	supportEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.setTitle('Seppuku Website')
+		.setURL('http://seppuku.pw')
+		.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture\nClippy\nCrashes')
+		.setFooter('Made by ' + tag, url);
+	installEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.setTitle('Download Seppuku')
+		.setURL('http://seppuku.pw/download.html')
+		.addField('How to install Seppuku:','Seppuku is a forge mod, so install forge (v14.23.5.2768 recommended), run the profile at least once, then place the Seppuku jar in *%appdata%\\\\.minecraft\\\\mods*\n**Seppuku\'s default prefix is `.`**')
+		.setFooter('Made by ' + tag, url);
+	bindEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.addField('How to bind modules:','.bind moduleName key')
+		.setFooter('Made by ' + tag, url);
+	prefixEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.addField('How to change Seppuku\'s prefix:','.cmd prefix key')
+		.setFooter('Made by ' + tag, url);
+	futureEmbed = new Discord.RichEmbed()
+		.setColor('#9900EE')
+		.addField('How to use Future with Seppuku:','**Not recommended or officially supported**\nInstall Future on your Forge version, then install Seppuku normally.')
+		.setFooter('Made by ' + tag, url);
+	multimcEmbed = new Discord.RichEmbed()
+		.setTitle('MultiMC Instance')
+		.setURL('https://discordapp.com/channels/579516739092480000/616326980438327346/660891430545522717')
+		.setColor('#9900EE')
+		.addField('Tutorial Here:', 'https://youtu.be/FCsj3oCxi7Q', true)
+		.addField('Includes:','Latest Build Dec. 29th, BetterFPS mod, Baritone, ClickUI, TabUI, and Smooth Font\nCredit to <@345932649480847370>!', true)
+		.setFooter('Made by ' + tag, url);
+	crashEmbed = new Discord.RichEmbed()
+		.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
+		.setColor('#9900EE')
+		.setFooter('Made by ' + tag, url);
+		
 
 
 }
