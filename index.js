@@ -36,7 +36,7 @@ function main() {
 		}
 		
 		if (msg.content.split(" ")[0] === "$say" && msg.author.id == myid) {
-			client.channels.get(msg.content.split(" ")[1]).then((channel) => {
+			client.channels.fetch(msg.content.split(" ")[1]).then((channel) => {
   				send(msg.content.split(" ")[2]);
 			});
 		}
