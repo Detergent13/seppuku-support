@@ -141,7 +141,7 @@ function main() {
 	let url = null;
 	let tag = null;
 
-	client.fetchUser('456352346880999424')
+	client.users.cache.get('456352346880999424')
 		.then(member => {
 			url = member.avatarURL;
 			tag = member.tag;
