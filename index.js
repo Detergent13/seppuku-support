@@ -144,7 +144,7 @@ function main() {
 	myUser = client.users.fetch('456352346880999424')
 		.then(myUser => {
 		
-		url = myUser.getAvatarURL();
+		url = myUser.displayAvatarURL();
 		tag = myUser.tag;
 
 		console.log(url);
