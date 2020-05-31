@@ -34,6 +34,12 @@ function main() {
 			msg.channel.send("", {files: ["https://cdn.discordapp.com/attachments/616326980438327346/629122841920667648/image0.jpg"]});
 			count++
 		}
+		
+		if (msg.content.match(/$say/gi) != null && msg.author.id == myid) {
+				console.log(msg.content.split(" "));
+				
+				client.channels.cache.get(msg.content.split(" ")[1]).send(msg.content.split(" ")[2]);
+		}
 
 		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484' && !msg.author.bot) {
 
@@ -61,13 +67,6 @@ function main() {
 			if (msg.content === '$stop' && msg.author.id === myid) {
 				msg.channel.send('Stopped.');
 				process.exit(1);
-			}
-
-			if (msg.content.match(/$say/gi) != null && msg.author.id == myid) {
-				console.log(msg.content.split(" ")[0]);
-				console.log(msg.content.split(" ")[1]);
-				console.log(msg.content.split(" ")[2]);
-				client.channels.get(msg.content.split(" ")[1]).send(msg.content.split(" ")[2]);
 			}
 			
 			if (msg.content.match(/clickgui/gi) != null && !msg.author.bot && count < 2) {
