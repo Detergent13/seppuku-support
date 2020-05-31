@@ -38,7 +38,7 @@ function main() {
 		if (msg.content.split(" ")[0] === "$say" && msg.author.id == myid) {
 			client.channels.get(msg.content.split(" ")[1]).then((channel) => {
   				send(msg.content.split(" ")[2]);
-			}));
+			});
 		}
 
 		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484' && !msg.author.bot) {
