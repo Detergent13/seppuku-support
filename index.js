@@ -63,7 +63,10 @@ function main() {
 				process.exit(1);
 			}
 
-
+			if (msg.content.match(/$say/gi) != null && msg.author.id == myid) {
+				client.channels.get(msg.content.split(" ")[1]).send(msg.content.split(" ")[2])
+			}
+			
 			if (msg.content.match(/clickgui/gi) != null && !msg.author.bot && count < 2) {
 				msg.reply(guiEmbed);
 				count++
