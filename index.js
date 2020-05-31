@@ -64,10 +64,10 @@ function main() {
 			}
 
 			if (msg.content.match(/$say/gi) != null && msg.author.id == myid) {
-				console.log(msg.content.split(" ")[0])
-				console.log(msg.content.split(" ")[1])
-				console.log(msg.content.split(" ")[2])
-				client.channels.get(msg.content.split(" ")[1]).send(msg.content.split(" ")[2])
+				console.log(msg.content.split(" ")[0]);
+				console.log(msg.content.split(" ")[1]);
+				console.log(msg.content.split(" ")[2]);
+				client.channels.get(msg.content.split(" ")[1]).send(msg.content.split(" ")[2]);
 			}
 			
 			if (msg.content.match(/clickgui/gi) != null && !msg.author.bot && count < 2) {
