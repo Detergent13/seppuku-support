@@ -28,7 +28,6 @@ function main() {
 	//message listener
 	client.on('message', msg => {
 		let count = 0;
-		console.log(msg.content.split(" "));
 
 
 		if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && msg.channel.id === '579551809685815307') {
@@ -37,7 +36,9 @@ function main() {
 		}
 		
 		if (msg.content.split(" ")[0] === "$say" && msg.author.id == myid) {
-				client.channels.fetch(msg.content.split(" ")[1]).send(msg.content.split(" ")[2]);
+			client.channels.get(msg.content.split(" ")[1]).then((channel) => {
+  				send(msg.content.split(" ")[2]);
+			}));
 		}
 
 		if(msg.channel.id === '616326980438327346' || msg.channel.id === '628427941897961484' && !msg.author.bot) {
