@@ -206,8 +206,7 @@ function main() {
 			.setFooter('Made by ' + tag, url);
 		terrainEmbed = new Discord.MessageEmbed()
 			.setColor('#9900EE')
-			.setTitle('Stuck on loading terrain?')
-			.addField('Hit ESC while loading in, then disable freecam.')
+			.addField('Stuck on loading terrain?','Hit ESC while loading in, then disable freecam.')
 			.setFooter('Made by ' + tag, url);
 	})
 }
