@@ -85,6 +85,11 @@ function main() {
 				msg.reply(guiEmbed);
 				count++
 			}
+			
+			if (msg.content.match(/loading terrain/gi) != null && !msg.author.bot && count < 2) {
+				msg.reply(terrainEmbed);
+				count++
+			}
 
 			if (msg.content.match(/crash/gi) != null && !msg.author.bot && count < 2) {
 				msg.reply(crashEmbed);
@@ -198,6 +203,10 @@ function main() {
 		crashEmbed = new Discord.MessageEmbed()
 			.addField('Getting crashes?','Please send the crashlog in your .minecraft\\logs.\nPlease make sure there\'s not any information that you don\'t feel comfortable sharing.')
 			.setColor('#9900EE')
+			.setFooter('Made by ' + tag, url);
+		terrainEmbed = new Discord.MessageEmbed()
+			.setColor('#9900EE')
+			.addField('Hit ESC while loading in, then disable freecam.')
 			.setFooter('Made by ' + tag, url);
 	})
 }
