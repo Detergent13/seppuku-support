@@ -57,7 +57,7 @@ function main() {
 			}
 
 			if ((((msg.content.match(/riga isn't cute/gi) != null) || (msg.content.match(/riga isnt cute/gi) != null)) && !msg.author.bot) && count < 2) {
-				msg.channel.send('stfu')
+				msg.channel.send('wrong')
 				count++;
 			}
 
