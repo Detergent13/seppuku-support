@@ -1,6 +1,6 @@
 /*
 	Seppuku Support Bot v1.0
-	By detergent#2533/iPho3n1x
+	By detergent#2533
 	Don't bully me for my spaghetti code please
 */
 
@@ -74,16 +74,6 @@ function main() {
 			if (msg.content === '$stop' && msg.author.id === myid) {
 				msg.channel.send('Stopped.');
 				process.exit(1);
-			}
-			
-			if (msg.content.match(/clickgui/gi) != null && !msg.author.bot && count < 2) {
-				msg.reply(guiEmbed);
-				count++
-			}
-
-			if (msg.content.match(/tabgui/gi) != null && !msg.author.bot && count < 2) {
-				msg.reply(guiEmbed);
-				count++
 			}
 			
 			if (msg.content.match(/loading terrain/gi) != null && !msg.author.bot && count < 2) {
@@ -161,19 +151,11 @@ function main() {
 			.setURL('https://github.com/cabaletta/baritone/releases')
 			.setDescription('Download baritone-standalone-forge-1.2.x, and install as a forge mod.')
 			.setFooter('Made by ' + tag, url);
-		guiEmbed = new Discord.MessageEmbed()
-			.setColor('#9900EE')
-			.setTitle('ClickGUI & TabGUI Release')
-			.setURL('https://discordapp.com/channels/579516739092480000/587485947785117710/659976320951779341')
-			.setDescription('Download the GUI jar, then place it in *%appdata%\\\\.minecraft\\\\Seppuku 1.12.2\\\\Modules* for 3.0.2-, or *%appdata%\\\\.minecraft\\\\Seppuku\\\\Modules* for 3.0.3+ Make sure you\'ve run Seppuku at least once. It comes with both ClickGUI and TabGUI.' +
-				'\nYou can bind TabGUI with .bind tabgui <key>, and the ClickGUI is bound to RSHIFT by default.' +
-				'\nCredit to <@376038587252342786>!')
-			.setFooter('Made by ' + tag, url);
 		supportEmbed = new Discord.MessageEmbed()
 			.setColor('#9900EE')
 			.setTitle('Seppuku Website')
 			.setURL('http://seppuku.pw')
-			.addField('Topics I can help with (Type one in chat!):','\nBaritone\nClickGUI\nInstallation\nBinds\nPrefix\nMultiMC\nFuture\nClippy\nCrashes')
+			.addField('Topics I can help with (Type one in chat!):','\nBaritone\nInstallation\nBinds\nPrefix\nMultiMC\nFuture\nClippy\nCrashes')
 			.setFooter('Made by ' + tag, url);
 		installEmbed = new Discord.MessageEmbed()
 			.setColor('#9900EE')
