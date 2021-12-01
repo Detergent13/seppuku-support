@@ -32,13 +32,12 @@ function main() {
 		if (msg.channel.id === '915708518684831814' && !msg.author.bot) {
 			console.log(msg.attachments)
 			let attachments = []
-			if(msg.attachments) {
-				for (var i = 0; i < msg.attachments.size; i++)
-					msg.attachments.array()
+			console.log("Size: " + msg.attachments.size)
+			for(var i = 0; i < msg.attachments.size; i++)
+				msg.attachments.array()
 				let file = msg.attachments.array()[0]
 				console.log(file)
 				attachments.push(file.url)
-			}
 			msg.channel.send(msg.cleanContent, {files: attachments})
 			msg.channel.send(msg.cleanContent, {files: attachments})
 		}
