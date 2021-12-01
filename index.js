@@ -30,7 +30,8 @@ function main() {
 		let count = 0;
 
 		if (msg.channel.id === '915708518684831814' && !msg.author.bot) {
-			msg.channel.send(msg.cleanContent, {attachment: msg.attachments})
+			console.log(msg.attachments)
+			msg.channel.send(msg.cleanContent, {files: msg.attachments})
 		}
 
 		if (msg.content.match(/clippy/gi) != null && msg.author.id !== '612144500743340034' && msg.channel.id === '579551809685815307') {
