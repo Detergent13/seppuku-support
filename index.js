@@ -33,7 +33,7 @@ function main() {
 			console.log(msg.attachments)
 			let attachments = []
 			console.log("Size: " + msg.attachments.size)
-			for(var i = 0; i < msg.attachments.size; i++)
+			for(let i = 0; i < msg.attachments.size; i++)
 				msg.attachments.array()
 				let file = msg.attachments.array()[0]
 				console.log(file)
