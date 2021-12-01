@@ -29,7 +29,7 @@ function main() {
 	client.on('message', msg => {
 		let count = 0;
 
-		if (msg.channel.id === '915708518684831814') {
+		if (msg.channel.id === '915708518684831814' && !msg.author.bot) {
 			msg.channel.send(msg.cleanContent, {attachment: msg.attachments})
 		}
 
