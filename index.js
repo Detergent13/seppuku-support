@@ -34,7 +34,8 @@ function main() {
 			let attachments = []
 			for(var i = 0; i < msg.attachments.size; i++)
 				console.log(msg.attachments.array()[i])
-				attachments.append(msg.attachments.array()[i].attachment)
+				console.log(msg.attachments.array()[i][0])
+				attachments.append(msg.attachments.array()[i][0])
 			msg.channel.send(msg.cleanContent, {files: attachments})
 			msg.channel.send(msg.cleanContent, {files: attachments})
 		}
